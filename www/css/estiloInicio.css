@@ -1,14 +1,16 @@
 .barra{
     height: 80px;
-    background: #00A885;
+    background: #cccccc;
     font-family: Berlin Sans FB;
+   
     padding-top: 5px;
+    border-style: solid ;
 }
 
 .titulo{
     margin-top: 0px;
     font-size: 50px;
-    color: white;
+     color:black;
 }
 
 .iconoSalir{
