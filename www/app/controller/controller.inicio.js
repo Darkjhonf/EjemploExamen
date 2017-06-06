@@ -1,56 +1,16 @@
-angular.module('ExamenPhp').controller('inicioController', ['$scope', 'registroUsuarioService', '$sessionStorage', '$location', 'rolAdmin', '$route', '$timeout', function ($scope, agregarUsuario, $sessionStorage, $location, rolAdmin, $route, $timeout) {
+angular.module('ejemplo').controller('inicioController', ['$scope', 'registroUsuarioService', '$sessionStorage', '$location', 'rolAdmin', '$route', '$timeout', function ($scope, agregarUsuario, $sessionStorage, $location, rolAdmin, $route, $timeout) {
 
-        $scope.dataRegistrarUsuario = {
-            cedula: '',
-            alias: '',
-            contrasena: '',
-            rol: ''
-        };
         
-        $scope.dataRegistrarArticulo = {
-            codigo: '',
+        $scope.dataAgregarContacto = {
             nombre: '',
-            descripcion: ''
+            apellido: '',
+            telefono: '',
+            correo:''
         };
-        
-        $scope.usuarios=[];
-        $scope.articulos=[];
-        $scope.edit = {};
-        $scope.editArt = {};
-        $scope.usuarioRegistrado = false;
-        $scope.articuloRegistrado = false;
-        $scope.usuarioEditado = false;
-        $scope.articuloEditado = false;
-        $scope.usuarioEliminado = false;
-
-        $scope.pintarTablaUsu = function () {
-            agregarUsuario.obtenerUsu.then(function successCallback(response) {
-                switch (response.data.code) {
-                    case 200:
-                        $scope.usuarios = response.data.datos;
-                        break;
-                    case 500:
-                        $scope.usuarios = [];
-                }
-            });
-        };
-        
-        $scope.pintarTablaUsu();
-        
-        $scope.pintarTablaArt = function () {
-            agregarUsuario.obtenerArt.then(function successCallback(response) {
-                switch (response.data.code) {
-                    case 200:
-                        $scope.articulos = response.data.datos;
-                        break;
-                    case 500:
-                        $scope.articulos = [];
-                }
-            });
-        };
+       
 
         
-        $scope.pintarTablaArt();
+        $scope.pintarTabla();
  
         $scope.submitNuevoUsuario = function () {
             agregarUsuario.agregarUsu($scope.dataRegistrarUsuario).then(function successCallback(response) {

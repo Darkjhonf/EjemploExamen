@@ -34,6 +34,11 @@ angular.module('ejemplo').config(['$routeProvider', '$httpProvider', function co
                     template: '<p>Cerrando sesión...</p>',
                     middleware: ['comprobarSession']
                 }).
+                when('/Agregar', {
+                    controller: 'agregarController',
+                    templateUrl: 'app/template/registrarContacto.html',
+                    middleware: ['comprobarSession']
+                }).
                 otherwise('/');
     }
 ]);

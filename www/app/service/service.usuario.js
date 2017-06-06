@@ -1,30 +1,21 @@
-angular.module('ejemplo').service('registroUsuarioService', ['$http', function($http){
+angular.module('ejemplo').service('agregarContactoService', ['$http', function($http){
     
-    this.agregarUsu = function (data) {
-      return $http.post('http://localhost/ejemplo/www/server.php/agregarUsuario', $.param(data));
-    };
+    
 
     this.obtenerUsu = $http.get('http://localhost/ejemplo/www/server.php/obtenerUsuario');
     
-    this.editarUsu = function (data) {
-      return $http.post('http://localhost/ejemplo/www/server.php/editarUsuario', $.param(data));
+    
+    this.agregarContacto = function (data) {
+      return $http.post('http://localhost/ejemplo/www/server.php/agregarContacto', $.param(data));
     };
     
-    this.eliminarUsu = function (data) {
-      return $http.post('http://localhost/ejemplo/www/server.php/eliminarUsuario', $.param(data));
+    this.obtenerContacto = $http.get('http://localhost/ejemplo/www/server.php/obtenerContacto');
+    
+    this.editarContacto = function (data) {
+      return $http.post('http://localhost/ejemplo/www/server.php/editarContacto', $.param(data));
     };
     
-    this.agregarArt = function (data) {
-      return $http.post('http://localhost/ejemplo/www/server.php/agregarArticulo', $.param(data));
-    };
-    
-    this.obtenerArt = $http.get('http://localhost/ejemplo/www/server.php/obtenerArticulo');
-    
-    this.editarArt = function (data) {
-      return $http.post('http://localhost/ejemplo/www/server.php/editarArticulo', $.param(data));
-    };
-    
-    this.eliminarArt = function (data) {
-      return $http.post('http://localhost/ejemplo/www/server.php/eliminarArticulo', $.param(data));
+    this.eliminarContacto = function (data) {
+      return $http.post('http://localhost/ejemplo/www/server.php/eliminarContacto', $.param(data));
     };
 }]);
